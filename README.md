@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/contentriumkorea/rium-shorts-skill-ramen/releases/latest"><img src="docs/images/badge-version.svg" alt="Version 1.4.0"></a>
+  <a href="https://github.com/contentriumkorea/rium-shorts-skill-ramen/releases/latest"><img src="docs/images/badge-version.svg" alt="Version 1.5.0"></a>
   <a href="docs/installation.md"><img src="docs/images/badge-format.svg" alt="SKILL.md 형식 — Codex와 Claude Code 설치 안내"></a>
   <a href="references/editor-workflow.md"><img src="docs/images/badge-editors.svg" alt="사용자가 선택한 편집기에 맞춘 작업"></a>
 </p>
@@ -40,6 +40,8 @@ git clone https://github.com/contentriumkorea/rium-shorts-skill-ramen.git "$env:
 ```
 
 [Claude 설치 · 사용자 지정 경로 · 업데이트 안내 →](docs/installation.md)
+
+처음 작업하는 프로젝트에서는 [프로젝트별 에셋 초기 설정](references/asset-setup.md)을 진행합니다. 동봉 에셋을 해당 프로젝트에 복사하고 편집기 연결을 확인해, 스킬을 업데이트해도 작업 중인 영상의 연결이 유지되게 합니다.
 
 ## 좋은 순간을 찾고, 읽히게 만들고, 다시 고칩니다
 
@@ -98,7 +100,7 @@ git clone https://github.com/contentriumkorea/rium-shorts-skill-ramen.git "$env:
 ```text
 $rium-shorts-skill-ramen
 나는 Premiere Pro로 편집해. 촬영본은 [폴더], BGM은 [음원 폴더].
-인파와 라면 조리 중심으로 30초짜리 초벌을 만들어줘.
+별도 대본은 없어. 인파와 라면 조리 중심으로 45~90초 범위의 초벌을 제안해줘.
 먼저 훅 문장과 자막 배치 두 가지를 추천해줘.
 ```
 
@@ -110,6 +112,7 @@ Rium Shorts Skill - ramen으로 04편 수정해줘.
 
 ## 적용 범위와 제한
 
+- **30초를 기본 길이로 잡지 않습니다.** 대본이 있으면 정상적인 발화·호흡·장면 전개에 필요한 길이에 맞추고, 대본이 없으면 45~90초를 출발 범위로 제안합니다. 대본을 억지로 빠르게 읽거나 잘라 이 범위에 맞추지 않으며, 사용자가 지정한 길이와 충돌하면 조정 방향을 확인합니다.
 - **편집기를 강제하지 않습니다.** 이름을 말한 것만으로 해당 편집기의 자동 조작이 가능한 것은 아닙니다. 연결 도구와 실제 지원 기능을 확인합니다.
 - 직접 편집·프로젝트 저장·렌더를 수행한 경우와 인계 자료만 만든 경우를 나눠 보고합니다. 편집기 간 변환은 자막·폰트·효과·속도·오디오 손실 여부를 검수합니다.
 - 스킬 자체는 원본 파일을 업로드하지 않습니다. 선택한 편집기·연결 서비스의 클라우드 처리는 별도이며, 업로드 중단 요청을 따릅니다.
@@ -121,6 +124,7 @@ Rium Shorts Skill - ramen으로 04편 수정해줘.
 
 - [스킬 작업 순서](SKILL.md) · [편집기 연결·실행](references/editor-workflow.md)
 - [포인트 그래픽 선택·합성](references/point-graphics.md) · [동봉 에셋](assets/point-effects/README.md)
+- [프로젝트별 에셋 초기 설정·연결 검수](references/asset-setup.md)
 - [편별 프로젝트 관리](references/episode-management.md) · [자막 조합·가림 검수](references/caption-layout-review.md)
 - [8편의 편집 분석](references/reference-analysis.md) · [오디오 분석](references/reference-audio-analysis.md)
 - [로컬 분석 도우미와 실행 조건](docs/installation.md#로컬-분석-도우미)
@@ -133,7 +137,7 @@ Rium Shorts Skill - ramen으로 04편 수정해줘.
 <details>
 <summary><strong>English overview</strong></summary>
 
-Rium Shorts Skill - ramen guides festival short-form production from footage review and a clear hook within two seconds to flexible captions, prepared music selection and occlusion review. It follows the editor chosen by the user and checks the available integration before editing. When direct editing is unavailable, it prepares explicit handoff material and reports the unexecuted steps. This SKILL.md package does not include a video editor, footage, music or credentials, and does not claim verified automation for every editing application.
+Rium Shorts Skill - ramen guides festival short-form production from footage review and a clear hook within two seconds to flexible captions, prepared music selection and occlusion review. Duration follows the script's natural delivery, pauses and scenes; without a script, the starting range is 45–90 seconds. It follows the editor chosen by the user and checks the available integration before editing. When direct editing is unavailable, it prepares explicit handoff material and reports the unexecuted steps. This SKILL.md package does not include a video editor, footage, music or credentials, and does not claim verified automation for every editing application.
 
 </details>
 
