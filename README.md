@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/contentriumkorea/rium-shorts-skill-ramen/releases/latest"><img src="docs/images/badge-version.svg" alt="Version 1.3.0"></a>
+  <a href="https://github.com/contentriumkorea/rium-shorts-skill-ramen/releases/latest"><img src="docs/images/badge-version.svg" alt="Version 1.4.0"></a>
   <a href="docs/installation.md"><img src="docs/images/badge-format.svg" alt="SKILL.md 형식 — Codex와 Claude Code 설치 안내"></a>
   <a href="references/editor-workflow.md"><img src="docs/images/badge-editors.svg" alt="사용자가 선택한 편집기에 맞춘 작업"></a>
 </p>
@@ -58,6 +58,16 @@ git clone https://github.com/contentriumkorea/rium-shorts-skill-ramen.git "$env:
 
 위 이미지는 실제 앱 화면이 아닌 작업 흐름·자막 배치 개념도입니다. 사용하는 편집기에서 가능한 연결과 가져오기 형식을 확인하고, 직접 편집이 불가능한 단계는 컷표·문구·오디오 계획·수정 지시로 구분해 인계합니다.
 
+### 바로 쓸 수 있는 포인트 효과
+
+불꽃·반짝임·충격 팡·번개·하트·뜨거운 김 **6종의 2초 루프 에셋**을 동봉했습니다. 장면의 의미에 맞는 순간을 추천하고 문구와 장식을 따로 편집합니다.
+
+![동봉한 6종 포인트 효과의 실제 합성 미리보기](assets/point-effects/preview.jpg)
+
+[효과만 ZIP 다운로드](https://github.com/contentriumkorea/rium-shorts-skill-ramen/releases/latest/download/rium-ramen-point-effects.zip) · [사용·합성 안내](assets/point-effects/README.md)
+
+배포용 영상은 **투명 배경 ProRes 4444 MOV 6종**입니다. 문구를 별도 텍스트로 올려 자유롭게 수정할 수 있습니다. 각 편집기의 실제 알파 임포트·합성 결과는 적용할 때 확인합니다.
+
 <details>
 <summary><strong>추가 예시 보기</strong></summary>
 
@@ -81,7 +91,7 @@ git clone https://github.com/contentriumkorea/rium-shorts-skill-ramen.git "$env:
 | 사용하는 편집기 | 기존 프로젝트에서 확인하거나 한 번 질문해 결정. 지원되는 연결·스크립트·가져오기 기능을 실제로 확인 |
 | 준비 BGM·효과음 | 사용자가 제공한 파일을 우선 분석·선택. 필요할 때 승인된 음성 생성 흐름 사용 |
 
-설치 ZIP은 스킬과 안내 자료입니다. 편집기나 연결 플러그인, 인증정보, 원본 영상·음원은 포함하지 않습니다.
+설치 ZIP은 스킬·안내 자료와 생성한 포인트 효과를 담습니다. 편집기나 연결 플러그인, 인증정보, 원본 영상·음원은 포함하지 않습니다.
 
 ## 이렇게 사용하세요
 
@@ -110,6 +120,7 @@ Rium Shorts Skill - ramen으로 04편 수정해줘.
 <summary><strong>상세 안내와 검증 범위</strong></summary>
 
 - [스킬 작업 순서](SKILL.md) · [편집기 연결·실행](references/editor-workflow.md)
+- [포인트 그래픽 선택·합성](references/point-graphics.md) · [동봉 에셋](assets/point-effects/README.md)
 - [편별 프로젝트 관리](references/episode-management.md) · [자막 조합·가림 검수](references/caption-layout-review.md)
 - [8편의 편집 분석](references/reference-analysis.md) · [오디오 분석](references/reference-audio-analysis.md)
 - [로컬 분석 도우미와 실행 조건](docs/installation.md#로컬-분석-도우미)

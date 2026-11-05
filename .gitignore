@@ -8,3 +8,11 @@ __pycache__/
 *.mp3
 *.zip
 dist/
+
+# Generated effects reviewed for distribution; raw footage remains ignored.
+!assets/point-effects/fire/fire-alpha-2s.mov
+!assets/point-effects/sparkle/sparkle-alpha-2s.mov
+!assets/point-effects/impact/impact-alpha-2s.mov
+!assets/point-effects/lightning/lightning-alpha-2s.mov
+!assets/point-effects/hearts/hearts-alpha-2s.mov
+!assets/point-effects/steam/steam-alpha-2s.mov

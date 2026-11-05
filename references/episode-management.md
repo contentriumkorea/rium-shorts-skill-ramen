@@ -23,12 +23,13 @@ codex/.../episode-index.json     # 편 번호 ↔ 편집기 ↔ 프로젝트/시
 - `capabilities`: 현재 연결에서 확인한 읽기·클립 편집·자막·오디오·저장·렌더·교환 포맷의 지원 여부와 근거. 제품 이름만으로 지원을 추정하지 않는다.
 - `status`: `planned`, `handoff_ready`, `native_edit_in_progress`, `native_saved`, `render_verified`, `blocked`처럼 실제 단계. 네이티브 저장 성공과 렌더 검증은 따로 기록한다. 일부 작업만 막히면 그 항목의 상태와 남은 작업을 적는다.
 - `format`: width/height, 시퀀스 fps, duration, 총 프레임 수와 시간/프레임 기준. 세로 1080×1920은 후보이며 소스·요청·기존 시퀀스에 따라 정한다.
-- `direction`: chosen_layout, hook, narrative, voice, music, reason, user_decision_or_delegation.
+- `direction`: chosen_layout, hook, narrative, voice, music, point_graphic_strategy, reason, user_decision_or_delegation. 강조 효과를 선택하거나 생략한 장면 근거를 남긴다.
 - `shots`: source_id/path, 실제 편집기 media/clip ID가 있으면 해당 값, source_in/out, timeline_in/out, 각 단위와 fps 기준, role, crop/speed_note.
 - `text`: wording, start/end, 단위, 실제 clip/layer ID 또는 트랙·이름, role(hook/chapter/caption), position_choice.
 - `caption_layout`: 기본 조합, 컷별 예외, 실제 자막 파일/트랙, 가림 문제·수정·재검수 구간. [자막 조합·재검수](caption-layout-review.md)를 따르고 문구/타이밍의 단일 기준을 지정한다.
+- `graphics`: 실제 asset/effect ID와 파일 경로·출처/사용 범위, 강조할 문구·장면 근거, 타임라인 구간, 반복·속도·크기·위치, 알파 해석·합성 방식, 연결된 텍스트·장식 항목. 동봉 MOV를 다른 알파 형식으로 변환했다면 원본·변환본과 실제 변환/임포트 검수 상태를 연결한다. 생성 에셋이면 수정에 필요한 원문·생성/가공 경로를 비밀값 없이 기록한다. `planned`, `asset_ready`, `applied`, `render_checked`를 구분하고 보유하지 않은 파일이나 미적용 효과를 완료로 채우지 않는다. [포인트 그래픽](point-graphics.md)을 따른다.
 - `audio`: asset/path 또는 실제 media ID, provider/source, 사용 권리 상태, start/end, speech/music/sfx 역할, 음량·페이드, 생성 음성이면 voice/model/settings(비밀값 제외).
-- `verification`: hook_by_2s, source_coverage, safe_area, source_links, native_save, audio_review, playback, render. 각 항목 pass/fail/not_checked + 실제 근거.
+- `verification`: hook_by_2s, source_coverage, safe_area, source_links, native_save, audio_review, graphics_composite, graphics_motion_bounds, graphics_loop, playback, render. 각 항목 pass/fail/not_checked + 실제 근거. 포인트 효과의 전체 범위와 알파 합성·가독성 검사를 텍스트 상자 검사로 대체하지 않는다.
 - `changes`: 수정 요청, 변경 범위, 기존 결정, 새 결과 경로, 미실행 항목과 다음 단계.
 
 검수 문제마다 `text_origin`(baked_in/authored_overlay/transcript_caption), 실제 확인 시각, 대상 레이어/트랙, 식별 근거, 선택한 수정과 재검수 결과를 연결한다. 원본 자체 가림은 새 레이어 수정으로 해결됐다고 표시하지 않는다. 인계용 JSON은 어떤 편집기에나 바로 임포트되는 포맷이 아니다.
@@ -38,5 +39,7 @@ codex/.../episode-index.json     # 편 번호 ↔ 편집기 ↔ 프로젝트/시
 “08편 5초에 있는 컷 바꿔줘” → 인덱스에서 편집기·프로젝트·시퀀스 확인 → 현재 타임라인과 원본 구간 조회 → 실제 대상 클립 확인 → 대체 컷 검토 → 지원되는 연결로 수정 → 관련 자막·음원·총 길이·저장 상태 재검수. 클립 ID가 없으면 트랙·이름·구간을 함께 확인한다. “그 말 나오는 곳”은 실제 전사와 해당 시퀀스의 타이밍으로 찾는다. 파일명만 보고 다른 편을 열지 않는다.
 
 “목소리는 빼줘”는 독립 VO 트랙이 있으면 해당 트랙만 처리하고 자막·BGM·현장음을 보존한다. 원본이나 BGM에 말·노래가 섞여 있으면 무엇을 남길지 구분한다. 분리가 요청됐을 때 실제 제공되는 도구와 비용·전송 범위를 확인하고 별도 결과로 보존한다. 전체 오디오 음소거를 음성 분리 완료라고 보고하지 않는다.
+
+“불꽃은 줄이고 문구만 바꿔줘”는 연결된 텍스트와 장식 항목을 찾아 각각 수정하고 다른 컷의 강조 스타일을 불필요하게 바꾸지 않는다. 글자와 효과가 한 파일에 구워져 있으면 실제 수정 가능 범위를 밝히고 편집 가능한 텍스트+별도 장식으로 재구성하거나 필요한 에셋만 다시 만든다. 문구 폭이 바뀌면 불꽃·마스크·그림자의 크기와 얼굴·음식 가림, UI 안전영역을 다시 검사한다.
 
 직접 편집 연결이 없으면 현재 편의 컷표·자막·믹스 지시·변경 목록을 갱신하고 `handoff_ready`로 표시한다. 파일을 생성했다는 이유로 `native_saved`나 `render_verified`로 올리지 않는다. 큰 재구성 전 필요한 프로젝트 버전을 보존하며 원본·미디어 연결·다른 편의 결과는 유지한다.
