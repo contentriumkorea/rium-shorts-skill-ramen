@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rium Shorts Skill - ramen"
+  short_description: "촬영본 정리부터 레퍼런스 기반 Kino 숏폼 초벌 편집과 편별 수정까지"
+  default_prompt: "$rium-shorts-skill-ramen으로 지정한 촬영본을 정리하고, 내 의도에 맞는 구미 라면축제 숏폼을 Kino에서 편집해줘."

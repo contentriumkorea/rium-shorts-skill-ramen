@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <title>Rium Shorts provisional Instagram overlay, review only</title>
+  <rect width="1080" height="1920" fill="#141821"/>
+  <g fill="#b44050" fill-opacity="0.35">
+    <rect width="1080" height="288"/><rect y="1248" width="1080" height="672"/>
+    <rect y="288" width="86" height="960"/><rect x="886" y="288" width="194" height="960"/>
+  </g>
+  <rect x="86" y="288" width="800" height="960" fill="none" stroke="#83dfbf" stroke-width="5" stroke-dasharray="16 12"/>
+  <g font-family="Arial,sans-serif" fill="white" text-anchor="middle">
+    <text x="540" y="135" font-size="38">TOP UI — REVIEW</text>
+    <text x="486" y="650" font-size="36">KEY TEXT / LOGO</text>
+    <text x="486" y="710" font-size="27">Provisional review area</text>
+    <text x="486" y="760" font-size="25">Not an official Instagram guarantee</text>
+    <text x="980" y="830" font-size="24" transform="rotate(90 980 830)">RIGHT-SIDE BUTTONS</text>
+    <text x="540" y="1450" font-size="32">ACCOUNT / CAPTION / AUDIO UI</text>
+    <text x="540" y="1750" font-size="28">REVIEW ONLY — REMOVE FROM EXPORT</text>
+  </g>
+</svg>
