@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700" role="img" aria-labelledby="title desc">
+  <title id="title">Rium Shorts Skill - ramen</title>
+  <desc id="desc">라면 그릇과 세로 영상 구도를 모티프로 한 스킬 커버. 촬영본 분석부터 자막 검수까지, 편집자가 선택한 도구로 작업하는 흐름을 소개한다.</desc>
+  <defs>
+    <pattern id="grain" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="0.8" fill="#342B22" opacity="0.08"/></pattern>
+  </defs>
+  <rect width="1600" height="700" rx="28" fill="#F6EFE2"/>
+  <rect width="1600" height="700" rx="28" fill="url(#grain)"/>
+  <g font-family="'Malgun Gothic','Noto Sans KR',Arial,sans-serif" fill="#29231D">
+    <text x="80" y="92" font-size="25" font-weight="700" letter-spacing="5">RIUM SHORTS SKILL</text>
+    <rect x="80" y="119" width="132" height="42" rx="21" fill="#E84F30"/>
+    <text x="146" y="148" fill="#FFF9EF" font-size="25" font-weight="700" text-anchor="middle">ramen</text>
+    <text x="76" y="276" font-size="88" font-weight="800" letter-spacing="-4">촬영의 맛을,</text>
+    <text x="76" y="382" font-size="88" font-weight="800" letter-spacing="-4">30초에 담다.</text>
+    <text x="80" y="454" font-size="27" font-weight="500">분석부터 자막 검수까지,</text>
+    <text x="80" y="496" font-size="27" font-weight="500">편집기는 당신의 방식으로.</text>
+    <g font-size="22" font-weight="700">
+      <rect x="80" y="548" width="148" height="46" rx="23" fill="#E8DFD0"/><text x="154" y="579" text-anchor="middle">소스 읽기</text>
+      <rect x="242" y="548" width="148" height="46" rx="23" fill="#E8DFD0"/><text x="316" y="579" text-anchor="middle">편집 방향</text>
+      <rect x="404" y="548" width="148" height="46" rx="23" fill="#E8DFD0"/><text x="478" y="579" text-anchor="middle">가림 검수</text>
+    </g>
+    <path d="M80 635H1520" stroke="#D9CFBF" stroke-width="2"/>
+    <text x="80" y="670" font-size="17" letter-spacing="3" font-weight="700">CONTENTRIUM</text>
+    <text x="1520" y="670" text-anchor="end" font-size="17" letter-spacing="1">FOOTAGE → STORY → EDIT → REVIEW</text>
+  </g>
+  <g transform="rotate(8 1240 300)">
+    <rect x="1080" y="82" width="344" height="445" rx="28" fill="#DCD2BF"/>
+    <rect x="1096" y="98" width="312" height="413" rx="17" fill="#F0B947"/>
+    <path d="M1127 175H1370M1127 199H1338M1127 223H1360" stroke="#FCF3DD" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="1334" cy="390" r="54" fill="#E84F30"/>
+  </g>
+  <g transform="rotate(-7 1120 300)">
+    <rect x="946" y="105" width="344" height="445" rx="28" fill="#2D2922"/>
+    <rect x="966" y="125" width="304" height="405" rx="17" fill="#9DAA82"/>
+    <path d="M981 417L1037 354L1090 394L1150 317L1255 417V514H981Z" fill="#727F59"/>
+    <circle cx="1120" cy="280" r="65" fill="#F6EFE2"/>
+    <path d="M1103 245L1152 280L1103 315Z" fill="#E84F30"/>
+    <rect x="1001" y="445" width="234" height="34" rx="8" fill="#F6EFE2"/>
+    <path d="M1023 462H1213" stroke="#2D2922" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g>
+    <path d="M1175 153C1143 127 1188 103 1164 77M1222 146C1193 119 1239 93 1216 65" fill="none" stroke="#E84F30" stroke-width="9" stroke-linecap="round"/>
+    <path d="M918 477H1435C1419 558 1332 605 1177 605C1025 605 939 558 918 477Z" fill="#E84F30"/>
+    <ellipse cx="1177" cy="477" rx="259" ry="58" fill="#C33F25"/>
+    <ellipse cx="1177" cy="474" rx="235" ry="43" fill="#F3B84D"/>
+    <path d="M1005 471C1073 428 1110 509 1175 466C1240 423 1286 503 1355 464M1003 488C1070 447 1116 520 1180 480C1244 441 1289 516 1350 482" fill="none" stroke="#FFE5A1" stroke-width="9" stroke-linecap="round"/>
+    <ellipse cx="1281" cy="458" rx="45" ry="28" fill="#FFF7DF" transform="rotate(-10 1281 458)"/>
+    <ellipse cx="1281" cy="458" rx="21" ry="17" fill="#E9A32C" transform="rotate(-10 1281 458)"/>
+    <path d="M1082 449L1123 441M1100 466L1144 453M1222 487L1255 473" stroke="#72814E" stroke-width="10" stroke-linecap="round"/>
+    <path d="M1039 528C1115 559 1241 559 1317 528" fill="none" stroke="#F58A60" stroke-width="8" stroke-linecap="round"/>
+    <path d="M1120 605H1233L1222 620H1130Z" fill="#B73623"/>
+  </g>
+</svg>

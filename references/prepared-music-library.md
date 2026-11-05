@@ -16,7 +16,7 @@ FFmpeg·ffprobe가 필요하다. 첫 오디오 스트림 전체의 LUFS-I/true p
 
 기록 항목:
 
-- `track_id`, `relative_path`, `hash`, `title`, `source/license_status`, `kino_media_id`(임포트 후).
+- `track_id`, `relative_path`, `hash`, `title`, `source/license_status`, `editor_item_reference`(가져온 뒤 실제 확인한 식별자 또는 프로젝트 내 경로·항목 이름).
 - `duration`, `vocal_presence`, `density`, `energy_curve`, `rhythm_feel`, `instrument_texture`, `speech_compatibility`, `ending_type`.
 - `useful_ranges`: source in/out, 인트로/그루브/상승/브레이크/엔딩 역할, 15·30·60초 편집 가능성, 잘라야 할 지점·잔향.
 - `tempo_estimate`는 숫자만 말고 추정 방법·half/double ambiguity·신뢰 한계를 적는다. BPM이 같아도 같은 곡의 느낌이 아니며 모든 컷을 비트마다 자르지 않는다.
@@ -35,9 +35,9 @@ FFmpeg·ffprobe가 필요하다. 첫 오디오 스트림 전체의 LUFS-I/true p
 
 이 분류는 추천 기준이지 장르 강제 규칙이 아니다. 사용자가 선택한 취향과 편별 다양성을 유지한다. 이전 편과 같은 곡을 재사용할 때는 같은 구간 반복이 의도적인지 확인한다. 음원 수가 적으면 구간·믹스만 바꾼 것을 다른 곡처럼 소개하지 않는다.
 
-## Kino 편집·수정
+## 선택한 편집기에서 편집·수정
 
-선택 파일을 기존 mediaId로 재사용하거나 `addMediaToKino`로 한 번 가져온다. 원래 트랙과 편집용 구간을 따로 기록한다. BGM/VO/현장음/SFX를 각각 독립 레이어로 두고 `source in/out`과 `timeline in/out`을 명확히 구분한다. 곡 전체를 미리 하나의 완성 믹스로 구워 놓지 않는다.
+선택 파일의 원본 경로와 편집 프로젝트의 기존 항목을 대조해 재사용하고, 아직 가져오지 않았다면 선택한 편집기의 가져오기 기능으로 연결한다. 해당 기능이 클라우드 업로드를 동반하는지 확인하고 사용자 범위를 따른다. 원래 트랙과 편집용 구간을 따로 기록한다. BGM·VO·현장음·SFX는 각각 수정 가능한 독립 트랙 또는 레이어로 두고 `source in/out`과 `timeline in/out`을 명확히 구분한다. 곡 전체를 미리 하나의 완성 믹스로 구워 놓지 않는다. 실제 저장과 재연결 확인은 [편집기 실행](editor-workflow.md)을 따른다.
 
 문장 중 음악을 낮추고 중요한 현장 소리 앞뒤를 비우는 안을 실제 소리 기준으로 조정한다. 끝은 영상 끝에서 임의 절단하지 말고 프레이즈 종료·적절한 페이드·잔향을 검수한다. 루프가 필요하면 접합점을 실제로 확인한다. 음악 교체 시 자막·소스 순서가 불필요하게 바뀌지 않도록 하고 리듬과 엔딩만 다시 검수한다.
 

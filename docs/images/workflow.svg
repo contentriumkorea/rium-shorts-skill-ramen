@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1300" viewBox="0 0 1000 1300" role="img" aria-labelledby="title desc">
+  <title id="title">촬영본에서 초벌 편집과 가림 검수까지</title>
+  <desc id="desc">실제 앱 화면이 아닌 편집 흐름 개념도. 소스 분석, 방향과 대본, 선택한 편집기 적용, 가림 재검수의 네 단계와 중앙·하중앙·상단 제목 자막 배치 선택지를 보여준다.</desc>
+  <rect width="1000" height="1300" rx="28" fill="#F6EFE2"/>
+  <g font-family="'Malgun Gothic','Noto Sans KR',Arial,sans-serif" fill="#29231D">
+    <text x="58" y="64" font-size="20" font-weight="700" letter-spacing="2" fill="#9B4B32">HOW IT WORKS · 편집 흐름 개념도</text>
+    <text x="55" y="125" font-size="47" font-weight="800" letter-spacing="-2">한 가지 흐름, 편집기는 각자의 선택</text>
+    <path d="M110 233V706" stroke="#D9CFBF" stroke-width="4" stroke-dasharray="8 12"/>
+    <rect x="58" y="163" width="884" height="133" rx="20" fill="#FFFFFF"/>
+    <circle cx="112" cy="217" r="31" fill="#E84F30"/><text x="112" y="226" text-anchor="middle" fill="#FFFFFF" font-size="26" font-weight="700">01</text>
+    <text x="171" y="214" font-size="34" font-weight="700">소스에서 좋은 장면 찾기</text>
+    <text x="172" y="253" font-size="24" fill="#6D6356">날짜·장소·인파·음식·반응의 근거를 구간별로 정리</text>
+    <rect x="58" y="320" width="884" height="133" rx="20" fill="#FFFFFF"/>
+    <circle cx="112" cy="374" r="31" fill="#E84F30"/><text x="112" y="383" text-anchor="middle" fill="#FFFFFF" font-size="26" font-weight="700">02</text>
+    <text x="171" y="371" font-size="34" font-weight="700">방향과 대본 먼저 잡기</text>
+    <text x="172" y="410" font-size="24" fill="#6D6356">첫 2초의 훅 → 화면 증거 → 먹거리와 현장 반응</text>
+    <rect x="58" y="477" width="884" height="133" rx="20" fill="#29231D"/>
+    <circle cx="112" cy="531" r="31" fill="#F0B947"/><text x="112" y="540" text-anchor="middle" font-size="26" font-weight="700">03</text>
+    <text x="171" y="528" font-size="34" font-weight="700" fill="#FFF9EF">선택한 편집기에 맞춰 적용</text>
+    <text x="172" y="567" font-size="24" fill="#E4D6C2">연결 기능 확인 · 직접 편집 또는 편집용 자료 인계</text>
+    <rect x="58" y="634" width="884" height="133" rx="20" fill="#FFFFFF"/>
+    <circle cx="112" cy="688" r="31" fill="#E84F30"/><text x="112" y="697" text-anchor="middle" fill="#FFFFFF" font-size="26" font-weight="700">04</text>
+    <text x="171" y="685" font-size="34" font-weight="700">가리는 장면은 다시 검수</text>
+    <text x="172" y="724" font-size="24" fill="#6D6356">얼굴·음식·손동작을 보고 이동·축약·시간 조정·생략</text>
+    <text x="58" y="837" font-size="31" font-weight="700">자막 배치는 장면마다 유연하게</text>
+    <g>
+      <rect x="74" y="866" width="246" height="290" rx="20" fill="#E6DDCD"/>
+      <rect x="114" y="886" width="166" height="248" rx="13" fill="#A8B38F"/>
+      <circle cx="196" cy="946" r="29" fill="#E4D4B6"/>
+      <path d="M152 1029C153 979 238 979 241 1029V1120H152Z" fill="#75805E"/>
+      <rect x="127" y="1003" width="140" height="32" rx="6" fill="#FDF9F1"/>
+      <text x="197" y="1026" text-anchor="middle" font-size="20" font-weight="700">핵심 문구</text>
+      <text x="197" y="1195" text-anchor="middle" font-size="27" font-weight="700">중앙 자막</text>
+    </g>
+    <g>
+      <rect x="377" y="866" width="246" height="290" rx="20" fill="#E6DDCD"/>
+      <rect x="417" y="886" width="166" height="248" rx="13" fill="#D89A6D"/>
+      <circle cx="500" cy="946" r="29" fill="#F4DEC0"/>
+      <path d="M457 1029C459 979 541 979 544 1029V1120H457Z" fill="#A36E4D"/>
+      <rect x="430" y="1074" width="140" height="32" rx="6" fill="#FDF9F1"/>
+      <text x="500" y="1097" text-anchor="middle" font-size="20" font-weight="700">핵심 문구</text>
+      <text x="500" y="1195" text-anchor="middle" font-size="27" font-weight="700">하중앙 자막</text>
+    </g>
+    <g>
+      <rect x="680" y="866" width="246" height="290" rx="20" fill="#E6DDCD"/>
+      <rect x="720" y="886" width="166" height="248" rx="13" fill="#B3AFA4"/>
+      <circle cx="803" cy="989" r="29" fill="#F0DCC1"/>
+      <path d="M760 1070C762 1020 844 1020 847 1070V1120H760Z" fill="#7C8073"/>
+      <rect x="733" y="906" width="140" height="32" rx="6" fill="#FDF9F1"/>
+      <text x="803" y="929" text-anchor="middle" font-size="20" font-weight="700">고정 주제</text>
+      <text x="803" y="1195" text-anchor="middle" font-size="27" font-weight="700">상단 제목</text>
+    </g>
+    <text x="500" y="1253" text-anchor="middle" font-size="21" fill="#6D6356">배치 선택을 설명하는 도식입니다. 실제 화면·안전영역·움직임은 다시 확인합니다.</text>
+  </g>
+</svg>

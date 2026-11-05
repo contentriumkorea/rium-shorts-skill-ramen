@@ -1,69 +1,141 @@
-# Rium Shorts Skill - ramen
+<p align="center">
+  <img src="docs/images/cover.svg" alt="Rium Shorts Skill - ramen — 촬영본의 좋은 순간을 찾아, 내가 쓰는 편집기로" width="100%">
+</p>
 
-촬영본 폴더와 간단한 의도로 라면축제 숏폼을 기획하고, **Kino에서 수정 가능한 초벌 편집**까지 진행하도록 돕는 Codex·Claude용 스킬입니다.
+<h1 align="center">Rium Shorts Skill - ramen</h1>
 
-## 하는 일
+<p align="center">
+  <strong>내 편집기에 맞춰 만드는 라면축제 숏폼</strong><br>
+  촬영본 정리부터 첫 2초의 훅, 자막·음악 추천, 얼굴과 음식 가림 검수까지.<br>
+  편집자가 쓰는 도구와 작업 환경을 확인하고 다음 편집을 이어갑니다.
+</p>
 
-- 촬영본을 날짜·시간·장소의 근거와 함께 인덱싱하고 인파·조리·음식·반응 구간을 선별합니다.
-- 레퍼런스 8편의 문장 전개·편집·오디오 분석을 바탕으로 방향과 대본을 추천합니다.
-- 첫 2초 안에 핵심 훅을 보여주고 화면 증거로 이어갑니다.
-- 중앙·하중앙 자막, 상단 고정 제목 등을 장면에 맞춰 조합합니다. 위치나 폰트를 전 편에 강제하지 않습니다.
-- 얼굴·음식·손동작과 Instagram UI 가림을 확인하고 이동·축약·노출 시간 조정·생략으로 수정합니다.
-- 준비된 BGM 파일을 우선 사용하고, 필요한 경우 연결된 ElevenLabs로 음성을 만드는 흐름을 안내합니다.
-- 편별 Kino 연결·소스 구간·검수 기록을 관리해 특정 편의 재수정을 돕습니다.
+<p align="center">
+  <a href="https://github.com/contentriumkorea/rium-shorts-skill-ramen/releases/latest"><img src="docs/images/badge-version.svg" alt="Version 1.3.0"></a>
+  <a href="docs/installation.md"><img src="docs/images/badge-format.svg" alt="SKILL.md 형식 — Codex와 Claude Code 설치 안내"></a>
+  <a href="references/editor-workflow.md"><img src="docs/images/badge-editors.svg" alt="사용자가 선택한 편집기에 맞춘 작업"></a>
+</p>
 
-자동 편집 실행 파일이나 자체 영상 편집기는 아닙니다. 스킬을 읽는 에이전트와 **Kino MCP 연결**이 실제 편집을 수행합니다.
+<p align="center">
+  <a href="#빠르게-시작하기">설치하기</a> ·
+  <a href="https://github.com/contentriumkorea/rium-shorts-skill-ramen/releases/latest/download/rium-shorts-skill-ramen.zip">다운로드</a> ·
+  <a href="#사용-모습">사용 모습</a> ·
+  <a href="SKILL.md">상세 안내</a>
+</p>
 
-## 설치
+---
 
-1. [최신 릴리스](https://github.com/contentriumkorea/rium-shorts-skill-ramen/releases/latest)에서 `rium-shorts-skill-ramen-v1.2.1.zip`을 받습니다.
-2. 압축을 풀면 `rium-shorts-skill-ramen` 폴더 안에 `SKILL.md`가 있습니다.
-3. 해당 폴더를 사용하는 도구의 스킬 디렉터리에 넣습니다. 기존 동명 폴더가 있으면 먼저 별도 백업한 뒤 교체합니다.
+## 빠르게 시작하기
 
-| 도구 | 기본 사용자 설치 위치 |
-|---|---|
-| Codex | `~/.codex/skills/rium-shorts-skill-ramen/` (`CODEX_HOME`을 지정했다면 그 아래 `skills/`) |
-| Claude Code | `~/.claude/skills/rium-shorts-skill-ramen/` |
+`SKILL.md`를 읽는 Codex 또는 Claude Code에서 사용합니다. 실제 편집은 사용 중인 편집기와 연결 가능한 기능에 따라 진행합니다.
 
-Windows의 `~`는 사용자 프로필 폴더입니다. 사용하는 앱에서 스킬 목록을 새로 읽거나 새 대화를 시작한 뒤 확인하세요. Kino MCP는 별도로 연결해야 합니다. 이 ZIP은 연결 설정이나 인증정보를 포함하지 않습니다.
+<p align="center">
+  <a href="https://github.com/contentriumkorea/rium-shorts-skill-ramen/releases/latest/download/rium-shorts-skill-ramen.zip"><img src="docs/images/download-skill.svg" alt="최신 스킬 ZIP 다운로드" width="380" height="72"></a>
+</p>
 
-## 사용 예
+ZIP을 풀어 `rium-shorts-skill-ramen` 폴더를 사용하는 도구의 스킬 디렉터리에 넣으세요. 기존 설치본은 먼저 백업합니다. Git을 쓰는 Windows Codex 새 설치의 기본 경로 예시는 다음과 같습니다.
+
+```powershell
+git clone https://github.com/contentriumkorea/rium-shorts-skill-ramen.git "$env:USERPROFILE\.codex\skills\rium-shorts-skill-ramen"
+```
+
+[Claude 설치 · 사용자 지정 경로 · 업데이트 안내 →](docs/installation.md)
+
+## 좋은 순간을 찾고, 읽히게 만들고, 다시 고칩니다
+
+| 01 · 촬영본에서 포인트 찾기 | 02 · 장면에 맞는 편집 추천 | 03 · 내 편집기로 수정하기 |
+| :--- | :--- | :--- |
+| **인파·조리·음식·반응을 선별** | **첫 2초 훅과 유연한 자막** | **편별 프로젝트와 검수 기록** |
+| 날짜·시간·장소의 근거를 남기고 쓸 만한 소스 구간을 정리합니다. | 중앙·하중앙·상단 고정 제목을 비교하고, 준비한 BGM과 문장 전개를 큐레이션합니다. | 실제 연결 기능으로 편집하고, 얼굴·음식이 가려지면 위치·길이·노출 시간을 다시 봅니다. |
+
+## 사용 모습
+
+<p align="center">
+  <img src="docs/images/workflow.svg" alt="촬영본 분석, 방향과 대본, 선택한 편집기에서 작업, 가림 재검수로 이어지는 개념도" width="100%">
+</p>
+
+**자막 위치는 템플릿에 고정하지 않고, 장면의 여백과 움직임에 맞춥니다.**
+
+위 이미지는 실제 앱 화면이 아닌 작업 흐름·자막 배치 개념도입니다. 사용하는 편집기에서 가능한 연결과 가져오기 형식을 확인하고, 직접 편집이 불가능한 단계는 컷표·문구·오디오 계획·수정 지시로 구분해 인계합니다.
+
+<details>
+<summary><strong>추가 예시 보기</strong></summary>
+
+| 촬영본에서 발견한 상황 | 추천과 재검수 |
+| :--- | :--- |
+| 중앙 자막이 면을 들어 올리는 손을 가림 | 상측 여백으로 옮기거나 짧게 줄인 뒤 손의 전체 움직임을 확인 |
+| 제목은 비어 보이던 위쪽에 있는데 사람이 고개를 듦 | 문구를 좌측 여백으로 옮기거나 얼굴 등장 전에 종료 |
+| 음식과 손·그릇이 화면 대부분을 차지 | 새 문구를 생략하고 음식 디테일과 현장음을 살리는 안을 제안 |
+| 여러 편집자가 다른 프로그램으로 같은 편을 수정 | 편 번호, 원본 구간, 선택한 편집기 프로젝트와 시퀀스, 검수 결과를 함께 연결 |
+
+과거 시험의 가림 판단 사례이며, 모든 편집기에서 자동 가림 검출을 검증했다는 뜻은 아닙니다.
+
+</details>
+
+## 스킬 설치·배포 안내
+
+| 방식 | 사용 방법 |
+| :--- | :--- |
+| Codex | 기본값 `~/.codex/skills/rium-shorts-skill-ramen/`. `CODEX_HOME` 지정 시 그 아래 `skills/` 사용 |
+| Claude Code | `~/.claude/skills/rium-shorts-skill-ramen/`에 동일한 스킬 폴더 설치 |
+| 사용하는 편집기 | 기존 프로젝트에서 확인하거나 한 번 질문해 결정. 지원되는 연결·스크립트·가져오기 기능을 실제로 확인 |
+| 준비 BGM·효과음 | 사용자가 제공한 파일을 우선 분석·선택. 필요할 때 승인된 음성 생성 흐름 사용 |
+
+설치 ZIP은 스킬과 안내 자료입니다. 편집기나 연결 플러그인, 인증정보, 원본 영상·음원은 포함하지 않습니다.
+
+## 이렇게 사용하세요
 
 ```text
 $rium-shorts-skill-ramen
-촬영본은 [내 폴더], 준비한 BGM은 [음원 폴더].
-사람 많은 분위기와 라면 조리 중심으로 30초 만들어줘.
-먼저 자막 배치와 두 가지 편집 방향을 추천해줘.
+나는 Premiere Pro로 편집해. 촬영본은 [폴더], BGM은 [음원 폴더].
+인파와 라면 조리 중심으로 30초짜리 초벌을 만들어줘.
+먼저 훅 문장과 자막 배치 두 가지를 추천해줘.
 ```
 
 ```text
-Rium Shorts Skill - ramen 스킬로 04편 수정해줘.
-시식하는 얼굴과 그릇을 가리는 자막은 위치와 노출 시간을 다시 봐줘.
+Rium Shorts Skill - ramen으로 04편 수정해줘.
+기존 프로젝트의 편집기를 유지하고, 시식하는 얼굴과 그릇이 가려지는
+자막의 위치·문장 길이·종료 시점을 다시 검수해줘.
 ```
 
-## 로컬 도우미
+## 적용 범위와 제한
 
-Python 3.9 이상과 PATH에서 실행 가능한 `ffprobe`가 인벤토리에 필요합니다. 오디오 측정에는 `ffmpeg`도 필요합니다. 시간대 데이터가 없는 Windows Python 환경에서는 `tzdata`가 필요할 수 있습니다. `librosa`·`numpy`는 선택적 템포 분석에만 사용하며, 없어도 음압 측정은 진행합니다. 스크립트가 의존성을 자동 설치하지 않습니다.
+- **편집기를 강제하지 않습니다.** 이름을 말한 것만으로 해당 편집기의 자동 조작이 가능한 것은 아닙니다. 연결 도구와 실제 지원 기능을 확인합니다.
+- 직접 편집·프로젝트 저장·렌더를 수행한 경우와 인계 자료만 만든 경우를 나눠 보고합니다. 편집기 간 변환은 자막·폰트·효과·속도·오디오 손실 여부를 검수합니다.
+- 스킬 자체는 원본 파일을 업로드하지 않습니다. 선택한 편집기·연결 서비스의 클라우드 처리는 별도이며, 업로드 중단 요청을 따릅니다.
+- 안전영역과 장면별 배치를 실제 출력에서 다시 확인합니다. 직접 청취, 휴대전화 Instagram UI, 모든 편집기의 자동 편집·재연결·GPU 렌더는 검증 완료로 주장하지 않습니다.
+- 원본 영상에 이미 합성된 자막과 새 자막 레이어를 구분합니다. 분석 사례를 제공하는 것이 원본 매체의 재사용 권리를 제공한다는 뜻은 아닙니다.
 
-아래 명령은 스킬 폴더에서 실행하거나, 스크립트 경로를 실제 설치 경로로 바꿔 실행합니다.
+<details>
+<summary><strong>상세 안내와 검증 범위</strong></summary>
 
-```text
-python scripts/inventory_media.py --source "촬영본 폴더" --output "기존 기록 폴더/media-index.json" --timezone Asia/Seoul
-python scripts/inspect_audio.py --source "준비 BGM 폴더" --output "기존 기록 폴더/audio-index.json"
-```
+- [스킬 작업 순서](SKILL.md) · [편집기 연결·실행](references/editor-workflow.md)
+- [편별 프로젝트 관리](references/episode-management.md) · [자막 조합·가림 검수](references/caption-layout-review.md)
+- [8편의 편집 분석](references/reference-analysis.md) · [오디오 분석](references/reference-audio-analysis.md)
+- [로컬 분석 도우미와 실행 조건](docs/installation.md#로컬-분석-도우미)
+- [실제 시험과 현재 미검증 범위](references/editor-test-validation.md) · [변경 기록](CHANGELOG.md)
 
-출력의 부모 폴더는 먼저 존재해야 하고 기존 출력 파일은 덮어쓰지 않습니다. 원본 파일은 수정하지 않습니다. 인벤토리는 메타데이터 후보를 만들며 얼굴·인파·장소를 자동 확정하지 않습니다. 음압·템포 측정은 실제 청취나 곡/효과음 식별을 대신하지 않습니다.
+과거 30초 시험에서 컷 편집·독립 자막과 오디오·가림 수정·출력 파일을 확인했습니다. 그 결과는 당시 편집 환경의 기록이며, 이번 편집기 선택형 지침의 모든 프로그램 연동이 검증됐다는 뜻은 아닙니다.
 
-## 검증 범위와 연결 조건
+</details>
 
-실제 30초 Kino 시험에서 8구간 편집, 독립 자막·오디오, 얼굴·음식 가림 수정, 900프레임 출력 및 파일 검사를 수행했습니다. 마지막 수정 구간은 Kino에서 따로 출력한 뒤 기존 렌더에 결합했습니다. [상세 검증](references/kino-test-validation.md)을 확인하세요.
+<details>
+<summary><strong>English overview</strong></summary>
 
-직접 청취·휴대전화 Instagram UI·독립 자동 가림 검출·ElevenLabs 생성·다른 PC의 Kino 미디어 재연결은 이 시험으로 검증하지 않았습니다. **GPU 인코딩·렌더 속도 최적화·전체 클라우드 OFF도 미검증**입니다. 안전영역은 보수적인 내부 가이드이며 실제 앱 UI와 장면별로 다시 확인합니다.
+Rium Shorts Skill - ramen guides festival short-form production from footage review and a clear hook within two seconds to flexible captions, prepared music selection and occlusion review. It follows the editor chosen by the user and checks the available integration before editing. When direct editing is unavailable, it prepares explicit handoff material and reports the unexecuted steps. This SKILL.md package does not include a video editor, footage, music or credentials, and does not claim verified automation for every editing application.
 
-Kino 도구는 연결·권한·요금제·호출 제한에 영향을 받을 수 있습니다. 일부 조회의 한도 오류를 모든 편집/렌더 불가로 일반화하지 않습니다. 로컬 파일 가져오기나 프로젝트 수정도 클라우드 분석·동기화를 수반할 수 있으므로, 스킬 설치가 오프라인 전용 편집을 뜻하지 않습니다.
+</details>
 
-## 포함되는 자료
+---
 
-`SKILL.md`, 실행 메타데이터, 편집·오디오·검수 지침, 안전영역 SVG, Python 도우미를 제공합니다. 레퍼런스 영상·음원·긴 전사·모델 가중치·내부 운영 문서·개인 경로·실제 Kino 프로젝트는 포함하지 않습니다. 분석 사례를 제공하는 것이 원본 매체의 재사용 권리를 제공한다는 뜻은 아닙니다.
+<p align="center">
+  <strong>CONTENTRIUM · 콘텐츠리움</strong><br>
+  <a href="docs/usage-and-rights.md">사용·저작권 안내</a> ·
+  <a href="https://github.com/contentriumkorea/rium-shorts-skill-ramen/releases/latest">Latest release</a>
+</p>
 
-[변경 기록](CHANGELOG.md) · [스킬 시작점](SKILL.md)
+<sub>별도의 오픈소스 라이선스는 지정하지 않았습니다. 언급된 편집기·서비스의 이름과 상표는 각 소유자에게 속하며, 이 스킬의 공식 제휴를 뜻하지 않습니다.</sub>
+
+<p align="center">
+  <a href="https://contentrium.com/"><img src="docs/images/contentrium-home.svg" alt="콘텐츠리움 홈페이지 바로가기" width="260" height="52"></a>
+</p>

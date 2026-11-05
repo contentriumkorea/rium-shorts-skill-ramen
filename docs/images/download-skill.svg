@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="72" viewBox="0 0 380 72" role="img" aria-labelledby="title">
+  <title id="title">스킬 ZIP 다운로드</title>
+  <rect width="380" height="72" rx="14" fill="#E84F30"/>
+  <path d="M42 20V43M33 35L42 44L51 35M29 47V53H55V47" fill="none" stroke="#FFF9EF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="80" y="43" font-family="'Malgun Gothic','Noto Sans KR',Arial,sans-serif" fill="#FFF9EF" font-size="23" font-weight="700">스킬 ZIP 다운로드</text>
+  <path d="M330 29L337 36L330 43" fill="none" stroke="#FFF9EF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
